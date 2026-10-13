@@ -2,7 +2,7 @@
 
 **Описание:** Пошаговое развёртывание связки «автоматическая выгрузка конфигурации в git (ветки base/main) + свой read-only MCP-сервер `1c-config` (метаданные, код, поиск, диагностики BSL LS) + нативный MCP BSL LS как дополнение + Zoo/Roo Code с правилами» в изолированном внутреннем контуре Windows, без Docker и без прав администратора.
 
-**Опирается на:** `Архитектурный Манифест Claude_v1.md` (мажор 1). Номера разделов `§N` ниже — разделы этого манифеста.
+**Опирается на:** `Архитектурный Манифест Claude_v1*.md` — последняя версия мажора 1 (сейчас `Claude_v1.1`). Номера разделов `§N` ниже — разделы этого манифеста.
 
 **Инструменты:** 1С:Конфигуратор (пакетный режим `1cv8 DESIGNER`), PowerShell 5.1, git, Python 3.11+, Eclipse Temurin JDK 21, BSL Language Server, MCP Python SDK, VS Code, Zoo Code / Roo Code, расширение Language 1C (BSL), Яндекс Почта (перенос файлов), Claude Code (разработка сервера в репозитории 1CDEV).
 
@@ -693,7 +693,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File C:\1C\erp\scripts\load-chang
 
 ## Дальше: Ф2 и Ф3
 
-Ф2 (расширение) и Ф3 (команда) — по §2 и §17 манифеста: live-доступ только к обезличенной копии ИБ (выбор между `1c_mcp` и `mcp-1c` — после проверки зрелости), `rlm-tools-bsl` при нехватке скорости поиска на ERP, CI-анализ `bsl-language-server analyze` на pull request, общий `mcp.json` с `${env:ONEC_TOOLS}`.
+Ф2 (расширение) и Ф3 (команда) — по §2 и §17 манифеста: live-доступ только к обезличенной копии ИБ (выбор сервера — по критериям §17.11; предварительно ROCTUP или `1c_mcp`), `rlm-tools-bsl` при нехватке скорости поиска на ERP, CI-анализ `bsl-language-server analyze` на pull request, общий `mcp.json` с `${env:ONEC_TOOLS}`.
 
 ---
 
